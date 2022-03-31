@@ -7,14 +7,13 @@ const RegisterPet = () => {
         e.preventDefault()
       try{  
         const formData ={
-            name: e.target[0].value,
-            surname: e.target[1].value,
-            phoneNumber: e.target[2].value,
-            email: e.target[3].value,
-            password: e.target[4].value,
+            PetName: e.target[0].value,
+            age: e.target[1].value,
+            species: e.target[2].value,
+            alergies: e.target[3].value,
         };
        
-        const postUser = await fecth("http//:localhost:3000/users", {
+        const postPet = await fecth("http//:localhost:3000/users", {
             method:"POST",
             body: JSON.stringify(formData),
             headers: {
@@ -22,7 +21,7 @@ const RegisterPet = () => {
             },
         });
 
-        if(postUser){
+        if(postPet){
             alert("Very Nice")
         }
     } catch (error){
@@ -37,8 +36,8 @@ const RegisterPet = () => {
         <div className="generalPet">
         <h1>Pet Register</h1>
         <form onSubmit={(e)=>formSubmit(e)}>
-            <label for="name">Pet Name</label>
-            <input type="text" id="name" name="name" />
+            <label for="PetName">Pet Name</label>
+            <input type="text" id="PetName" name="PetName" />
 
             <label for="age">Age</label>
             <input type="number" id="age" name="age" />
