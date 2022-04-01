@@ -8,11 +8,9 @@ import Home from './containers/Home/Home.js';
 function App() {
   return (
     <div className="App">
-    <Home></Home>
-    <Login></Login>
+
     <Register></Register>
-    <RegisterPet></RegisterPet>
-    
+
     
     </div>
   );

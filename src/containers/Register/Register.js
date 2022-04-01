@@ -5,32 +5,34 @@ const Register = () => {
 
     const formSubmit = async (e)=>{
         e.preventDefault()
-      try{  
         const formData ={
             name: e.target[0].value,
-            surname: e.target[1].value,
-            phoneNumber: e.target[2].value,
-            email: e.target[3].value,
-            password: e.target[4].value,
+            phoneNumber: e.target[1].value,
+            email: e.target[2].value,
+            password: e.target[3].value,
         };
-       
-        const postUser = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/usuarios", {
+      try{  
+        const postUser = await fetch("https://chen-veterinary.herokuapp.com/user", {
+            mode: 'no-cors',
             method:"POST",
             body: JSON.stringify(formData),
             headers: {
                 "Content-Type": "application/json",
+                'Access-Control-Allow-Origin': '*'
             },
         });
-    
+
+        console.log("Form Sumbmit works", postUser);
+
         if(postUser){
-            alert("Very Nice")
+            console.log("Very Nice")
         }
-    } catch (error){
-            alert("Not Good" + error)
+    }
+     catch (error){
+            console.log(error.message)
     }
         
     };
-    
     
     return (
         <div className="general">
@@ -38,9 +40,6 @@ const Register = () => {
         <form onSubmit={(e)=>formSubmit(e)}>
             <label for="name">Name</label>
             <input type="text" id="name" name="name" />
-
-            <label for="surName">Surname</label>
-            <input type="text" id="surname" name="surname" />
 
             <label for="phoneNumber">PhoneNumber</label>
             <input type="text" id="phonenumber" name="phonenumber" />
