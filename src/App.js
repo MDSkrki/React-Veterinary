@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
     <Register></Register>
-    <RegisterPet></RegisterPet>
+    
  
     </div>
   );
