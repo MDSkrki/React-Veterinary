@@ -14,7 +14,7 @@ const Register = () => {
             password: e.target[4].value,
         };
        
-        const postUser = await fecth("http//:localhost:3000/users", {
+        const postUser = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/usuarios", {
             method:"POST",
             body: JSON.stringify(formData),
             headers: {
