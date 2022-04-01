@@ -3,32 +3,32 @@ import './RegisterPet.css';
 
 const RegisterPet = () => {
 
-    // const formSubmit = async (e) => {
-    //     e.preventDefault()
-    //     try {
-    //         const formData = {
-    //             PetName: e.target[0].value,
-    //             age: e.target[1].value,
-    //             species: e.target[2].value,
-    //             allergies: e.target[3].value,
-    //         };
+    const formSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const formData = {
+                PetName: e.target[0].value,
+                age: e.target[1].value,
+                species: e.target[2].value,
+                allergies: e.target[3].value,
+            };
 
-    //         const postPet = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/pacientes", {
-    //             method: "POST",
-    //             body: JSON.stringify(formData),
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //         });
+            const postPet = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/pacientes", {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
 
-    //         if (postPet) {
-    //             alert("Very Nice")
-    //         }
-    //     } catch (error) {
-    //         alert("Not Good" + error)
-    //     }
+            if (postPet) {
+                alert("Very Nice")
+            }
+        } catch (error) {
+            alert("Not Good" + error)
+        }
 
-    // };
+    };
 
     return (
         <div className="generalPet">
