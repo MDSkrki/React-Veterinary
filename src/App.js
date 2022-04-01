@@ -11,6 +11,7 @@ function App() {
     <Register></Register>
     <RegisterPet></RegisterPet>
     
+    
     </div>
   );
 }

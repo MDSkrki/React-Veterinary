@@ -28,6 +28,7 @@ const LoginUser =()=>{
     };
     return(
         <div className="generalLogin">
+            <h1>Login</h1>
              <form onSubmit={(e)=>formSubmit(e)}>
 
             <label for="email">E-mail</label>
