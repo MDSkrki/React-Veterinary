@@ -5,7 +5,7 @@
 
 .App{
   background-color: rgb(255,212,190);
-  height:  100vh;
+  min-height: 100vh;
 }
 
 .App-logo {

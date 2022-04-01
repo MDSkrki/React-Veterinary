@@ -10,7 +10,7 @@ const RegisterPet = () => {
             PetName: e.target[0].value,
             age: e.target[1].value,
             species: e.target[2].value,
-            alergies: e.target[3].value,
+            allergies: e.target[3].value,
         };
        
         const postPet = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/pacientes", {
