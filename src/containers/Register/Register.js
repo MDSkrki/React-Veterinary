@@ -3,33 +3,33 @@ import './Register.css';
 
 const Register = () => {
 
-    const formSubmit = async (e)=>{
-        e.preventDefault()
-      try{  
-        const formData ={
-            name: e.target[0].value,
-            surname: e.target[1].value,
-            phoneNumber: e.target[2].value,
-            email: e.target[3].value,
-            password: e.target[4].value,
-        };
+    // const formSubmit = async (e)=>{
+    //     e.preventDefault()
+    //   try{  
+    //     const formData ={
+    //         name: e.target[0].value,
+    //         surname: e.target[1].value,
+    //         phoneNumber: e.target[2].value,
+    //         email: e.target[3].value,
+    //         password: e.target[4].value,
+    //     };
        
-        const postUser = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/usuarios", {
-            method:"POST",
-            body: JSON.stringify(formData),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
+    //     const postUser = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/usuarios", {
+    //         method:"POST",
+    //         body: JSON.stringify(formData),
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //     });
     
-        if(postUser){
-            alert("Very Nice")
-        }
-    } catch (error){
-            alert("Not Good" + error)
-    }
+    //     if(postUser){
+    //         alert("Very Nice")
+    //     }
+    // } catch (error){
+    //         alert("Not Good" + error)
+    // }
         
-    };
+    // };
     
     
     return (
