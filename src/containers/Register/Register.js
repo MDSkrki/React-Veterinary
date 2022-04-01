@@ -11,14 +11,13 @@ const Register = () => {
             email: e.target[2].value,
             password: e.target[3].value,
         };
+        console.log(formData);
       try{  
         const postUser = await fetch("https://chen-veterinary.herokuapp.com/user", {
-            mode: 'no-cors',
             method:"POST",
             body: JSON.stringify(formData),
             headers: {
                 "Content-Type": "application/json",
-                'Access-Control-Allow-Origin': '*'
             },
         });
 
@@ -50,7 +49,7 @@ const Register = () => {
             <label for="password">Password</label>
             <input type="password" id="password" name="password" />
 
-            <input type="submit" value="ACCEPT" className="sendButton"></input>
+            <input type="submit" value="ACCEPT" className="sendButton"/>
         </form>
         </div>
     );
