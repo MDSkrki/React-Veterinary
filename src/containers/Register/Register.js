@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 
 const Register = () => {
 
+    const navigate = useNavigate();
     const formSubmit = async (e)=>{
         e.preventDefault()
         const formData ={
@@ -25,6 +27,7 @@ const Register = () => {
 
         if(postUser){
             console.log("Very Nice")
+            navigate('pet');
         }
     }
      catch (error){
