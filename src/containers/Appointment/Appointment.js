@@ -9,7 +9,7 @@ const Appointment = () => {
                 professional: e.target[3].value,
             };
 
-            const postAppointment = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/citas", {
+            const postAppointment = await fetch("https://chen-veterinary.herokuapp.com/appointment", {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
@@ -37,10 +37,20 @@ const Appointment = () => {
                 <input type="text" id="treatment" name="treatment" />
 
                 <label for="date">Date</label>
-                <input type="date" id="species" name="species" />
+                <input type="date" id="date" name="date" />
 
                 <label for="professional">Professional</label>
                 <input type="text" id="professional" name="professional" />
+
+                <label for="professional">Choose your doctor:</label>
+                <select id="professional">
+                    <option value="Mihai">Mihai</option>
+                    <option value="Susana">Susana</option>
+                    <option value="Alex">Alex</option>
+                    <option value="David">David</option>
+                    <option value="Rogelio">Rogelio</option>
+                    
+                </select>
 
                 <input type="submit" value="ACCEPT" className="sendButton"></input>
             </form>
