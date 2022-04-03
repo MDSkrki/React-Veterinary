@@ -1,14 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-
-/**
- * Pending tasks:
- * 1- Recieve user's name through props
- * 2- Insert user's name in h1
- * 
- */
-
-//en este profile tiene que salir los datos de la mascota con sus citas
 const Profile = () => {
 
     const [pets, setPets] = useState([]);
@@ -39,7 +30,7 @@ const Profile = () => {
             <button>Logout</button>  
             <button>Add new pet</button>
             <div>
-                <ol>
+                <ul>
                     {pets.map((pet)=>{
                         return (
                             <div>
@@ -50,7 +41,7 @@ const Profile = () => {
                             </div>
                         );
                     })};
-                </ol>
+                </ul>
             </div>
         </div>
     );
