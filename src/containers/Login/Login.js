@@ -3,7 +3,7 @@ import './Login.css';
 
 
 const LoginUser =()=>{
-
+    console.log("hola")
     const navigate = useNavigate();
     const formSubmit = async (e)=>{
         e.preventDefault()
@@ -13,18 +13,22 @@ const LoginUser =()=>{
             password: e.target[1].value,
         };
        
-        const LoginUser = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/login", {
+        const LoginUser = await fetch("https://chen-veterinary.herokuapp.com/user/login", {
             method:"POST",
             body: JSON.stringify(formData),
             headers: {
                 "Content-Type": "application/json",
             },
         });
-    
-        if(LoginUser){
-            alert("Very Nice")
+        console.log("hola2"+LoginUser.body)
+        LoginUser.json().then(data => {
+            console.log("holaaa"+ data);
+            sessionStorage.setItem("iduser",data.iduser);
+            sessionStorage.setItem("token",data.token);
+            alert("Very Nice:" + sessionStorage.getItem("iduser"))
             navigate('/profile');
-        }
+          });
+        
     } catch (error){
             alert("Not Good" + error)
     }
