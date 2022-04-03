@@ -11,6 +11,8 @@ const Profile = () => {
             <button>See Pets</button>
             <button>See Appointments</button>
             <button>Logout</button>
+            
+
         </div>
     )
 }
