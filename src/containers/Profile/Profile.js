@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import "./Profile.css";
 
 const Profile = () => {
 
@@ -25,22 +26,24 @@ const Profile = () => {
     return(
         <div>
             <h1>Hello {}!</h1>
-            <button>See Pets</button>
-            <button>See Appointments</button>   
-            <button>Logout</button>  
+            <div className="buttons">
             <button>Add new pet</button>
+            <button>Logout</button>  
+            </div>
             <div>
                 <ul>
                     {pets.map((pet)=>{
                         return (
-                            <div>
-                                <li>{pet.name}</li>
-                                <li>{pet.age}</li>
-                                <li>{pet.species}</li>
-                                <li>{pet.allergies}</li>
+                            <div className="petCard">
+                                <li>Name: {pet.name}</li>
+                                <li>Age: {pet.age}</li>
+                                <li>Species: {pet.species}</li>
+                                <li>Allergies: {pet.allergies}</li>
+                                <br/>
+                                <input type="submit" value="Add New Appointment" className="sendButton"></input>
                             </div>
                         );
-                    })};
+                    })}
                 </ul>
             </div>
         </div>
