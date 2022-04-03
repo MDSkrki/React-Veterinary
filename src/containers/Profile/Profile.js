@@ -9,17 +9,16 @@ import { useState } from 'react';
  */
 const Profile = () => {
 
-    const [pet, setPet] = useState([]);
+    const [pets, setPets] = useState([]);
 
     const petList = async =()=>{
-
-        const petResults = await fetch("https://chen-veterinary.herokuapp.com/pet", {
+        const petResults = await fetch ("https://chen-veterinary.herokuapp.com/pet", {
             method:"GET"
         });
 
         const dataPet = await petResults.json();
 
-        setPet(dataPet);
+        setPets(dataPet);
     }
 
     useEffect(()=>{
@@ -39,13 +38,20 @@ const Profile = () => {
             <button>Add new pet</button>
             <div>
                 <ol>
-
+                    {pets.map((pet)=>{
+                        return (
+                            <div>
+                                <li>{pet.name}</li>
+                                <li>{pet.age}</li>
+                                <li>{pet.species}</li>
+                                <li>{pet.allergies}</li>
+                            </div>
+                        );
+                    })};
                 </ol>
             </div>
-            
-
         </div>
-    )
-}
+    );
+};
 
 export default Profile;
