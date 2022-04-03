@@ -22,12 +22,14 @@ const Register = () => {
                 "Content-Type": "application/json",
             },
         });
+        
+        const savedUser = await postUser.json();
 
-        console.log("Form Sumbmit works", postUser);
+        console.log("Form Submit works", savedUser);
 
         if(postUser){
             console.log("Very Nice")
-            navigate('pet');
+            navigate('pet', {state: {idUser: savedUser.id}});
         }
     }
      catch (error){
