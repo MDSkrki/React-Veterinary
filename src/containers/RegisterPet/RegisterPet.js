@@ -1,18 +1,20 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './RegisterPet.css';
 
 
 const RegisterPet = () => {
-
+    const location = useLocation()
     const navigate = useNavigate();
+
     const formSubmit = async (e) => {
         e.preventDefault()
         try {
             const formData = {
-                PetName: e.target[0].value,
+                name: e.target[0].value,
                 age: e.target[1].value,
                 species: e.target[2].value,
                 allergies: e.target[3].value,
+                idUser: location.state.idUser,
             };
 
             const postPet = await fetch("https://chen-veterinary.herokuapp.com/pet", {
@@ -30,7 +32,6 @@ const RegisterPet = () => {
         } catch (error) {
             alert("Not Good" + error)
         }
-
     };
 
     return (
