@@ -7,12 +7,14 @@ import { useState, useEffect } from 'react';
  * 2- Insert user's name in h1
  * 
  */
+
+//en este profile tiene que salir los datos de la mascota con sus citas
 const Profile = () => {
 
     const [pets, setPets] = useState([]);
 
     const petList = async () => {
-        const petResults = await fetch ("https://chen-veterinary.herokuapp.com/pet?idUser="+localStorage.getItem("id"), {
+        const petResults = await fetch ("https://chen-veterinary.herokuapp.com/pet?idUser="+sessionStorage.getItem("iduser"), {
             method:"GET"
         });
 
@@ -33,8 +35,8 @@ const Profile = () => {
         <div>
             <h1>Hello {}!</h1>
             <button>See Pets</button>
-            <button>See Appointments</button>
-            <button>Logout</button>
+            <button>See Appointments</button>   
+            <button>Logout</button>  
             <button>Add new pet</button>
             <div>
                 <ol>

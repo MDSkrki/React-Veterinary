@@ -26,7 +26,7 @@ const Register = () => {
         console.log("Form Sumbmit works", postUser);
 
         if(postUser){
-            console.log("Very Nice")
+            console.log("Very Nice:" + postUser)
             navigate('pet');
         }
     }
