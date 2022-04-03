@@ -9,10 +9,14 @@ const Home = () => {
     return (
         <div>
             <img src={Logo} alt="logo" />
-            <Link to='/register'>
-                <div><button>Register</button></div>
+            <div>
+            <Link to='/login'>
+                <button>Login</button>
             </Link>
-
+            <Link to='/register'>
+                <button>Register</button>
+            </Link>
+            </div>
         </div>
     )
 };

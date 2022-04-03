@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 
 const LoginUser =()=>{
+
+    const navigate = useNavigate();
     const formSubmit = async (e)=>{
         e.preventDefault()
       try{  
@@ -20,6 +23,7 @@ const LoginUser =()=>{
     
         if(LoginUser){
             alert("Very Nice")
+            navigate('/profile');
         }
     } catch (error){
             alert("Not Good" + error)
