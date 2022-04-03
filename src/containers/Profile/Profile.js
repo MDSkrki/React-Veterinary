@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 /**
@@ -11,8 +11,8 @@ const Profile = () => {
 
     const [pets, setPets] = useState([]);
 
-    const petList = async =()=>{
-        const petResults = await fetch ("https://chen-veterinary.herokuapp.com/pet", {
+    const petList = async () => {
+        const petResults = await fetch ("https://chen-veterinary.herokuapp.com/pet?idUser="+localStorage.getItem("id"), {
             method:"GET"
         });
 
