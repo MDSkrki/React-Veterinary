@@ -15,7 +15,7 @@ const RegisterPet = () => {
                 allergies: e.target[3].value,
             };
 
-            const postPet = await fetch("https://chen-clinicadentalsql.herokuapp.com:3000/pacientes", {
+            const postPet = await fetch("https://chen-veterinary.herokuapp.com/pet", {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
