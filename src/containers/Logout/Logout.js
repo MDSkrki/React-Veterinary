@@ -1,17 +1,29 @@
-import { useNavigate } from "react-router-dom";
 import "./Logout.css";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Logout = ()=>{
+const Logout = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-    sessionStorage.clear
-    navigate("/login");
-    return(
-        <div>
-            <h2>Cerrando sesión. . . </h2>
-        </div>
-    )
-}
+  useEffect(() => {
+    try {
+      sessionStorage.clear();
+      setTimeout(
+        function () {
+          navigate("/login");
+        }.bind(this),
+        1000
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
+  return (
+    <div>
+      <h2>Cerrando sesión. . . </h2>
+    </div>
+  );
+};
 
 export default Logout;

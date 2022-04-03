@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import "./Profile.css";
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -28,7 +29,9 @@ const Profile = () => {
             <h1>Hello {}!</h1>
             <div className="buttons">
             <button>Add new pet</button>
-            <button>Logout</button>  
+            <Link to='/logout'>
+            <button>Logout</button> 
+            </Link> 
             </div>
             <div>
                 <ul>
