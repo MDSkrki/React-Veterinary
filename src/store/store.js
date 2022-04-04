@@ -1,8 +1,9 @@
 import { createStore } from "redux";
 
 const initialState = {
-    login: false
-}
+    login: false,
+    token: null
+};
 
 /**
  * 
@@ -13,10 +14,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 
     if(action.type == "USER_LOGGED"){
-        return {login : true}
+        
+        return {
+            login : true,
+            token : action.payload
+        };
     }
 
 
-}
+};
 
-export default createStore(reducer)
+export default createStore(reducer);

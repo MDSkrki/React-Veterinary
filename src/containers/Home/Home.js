@@ -1,6 +1,6 @@
 import './Home.css';
 import Logo from '../../images/physiopet-logo.png';
-import { Link } from 'react-router-dom';
+
 
 
 
@@ -10,12 +10,8 @@ const Home = () => {
         <div>
             <img src={Logo} alt="logo" />
             <div>
-            <Link to='/login'>
-                <button>Login</button>
-            </Link>
-            <Link to='/register'>
-                <button>Register</button>
-            </Link>
+           
+         
             </div>
         </div>
     )
