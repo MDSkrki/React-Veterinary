@@ -30,9 +30,7 @@ const Profile = () => {
             <h1>Hello {}!</h1>
             <div className="buttons">
             <button>Add new pet</button>
-            <Link to='/logout'>
-            <button>Logout</button> 
-            </Link> 
+  
             </div>
             <div>
                 <ul>

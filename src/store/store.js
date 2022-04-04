@@ -21,6 +21,12 @@ const reducer = (state = initialState, action) => {
         };
     }
 
+    if(action.type == "USER_UNLOGGED"){
+        return{
+            login: false,
+            token: null
+        };
+    }
 
 };
 

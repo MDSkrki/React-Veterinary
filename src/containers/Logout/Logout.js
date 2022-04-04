@@ -1,6 +1,7 @@
 import "./Logout.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import store from "../../store/store";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -8,6 +9,11 @@ const Logout = () => {
   useEffect(() => {
     try {
       sessionStorage.clear();
+      
+      store.dispatch({
+        type: "USER_UNLOGGED"
+      });
+
       setTimeout(
         function () {
           navigate("/login");

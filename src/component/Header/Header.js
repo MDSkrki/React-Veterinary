@@ -4,13 +4,13 @@ import store from '../../store/store';
 
 
 const Header = () => {
-    const [logins, setLogin] = useState(false);
+    const [logged, setLogged] = useState(false);
 
     useEffect(()=>{
         store.subscribe(()=>{
             console.log("El estado: " + store.getState().login + "token:" + store.getState().token);
 
-            setLogin(store.getState().login);
+            setLogged(store.getState().login);
         });
     }, []);
 
@@ -20,13 +20,16 @@ const Header = () => {
             <a href="../../containers/Profile/Profile.js">Profile</a>
             <a href="../../containers/ListAppointments/ListAppointment.js">Appointment</a>
             <Link to='/login'>
-                {!logins && <button>Login</button>}
+                {!logged && <button>Login</button>}
             </Link>
+            <Link to='/logout'>
+                {logged && <button>Logout</button>} 
+            </Link> 
             <Link to='/register'>
                 <button>Register</button>
             </Link>
         </div>
     )
-}
+};
 
 export default Header;

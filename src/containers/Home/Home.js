@@ -9,10 +9,6 @@ const Home = () => {
     return (
         <div>
             <img src={Logo} alt="logo" />
-            <div>
-           
-         
-            </div>
         </div>
     )
 };
