@@ -3,6 +3,7 @@ import "./Profile.css";
 import { Link } from 'react-router-dom';
 
 const Profile = () => {
+    
 
     const [pets, setPets] = useState([]);
 
@@ -43,7 +44,9 @@ const Profile = () => {
                                 <li>Species: {pet.species}</li>
                                 <li>Allergies: {pet.allergies}</li>
                                 <br/>
-                                <input type="submit" value="Add New Appointment" className="sendButton"></input>
+                                <Link to='/Appointment'>
+                                <button>Add New Appointment</button>
+                                </Link>
                             </div>
                         );
                     })}

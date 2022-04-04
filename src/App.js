@@ -6,7 +6,6 @@ import Home from './containers/Home/Home.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Profile from './containers/Profile/Profile';
 import Appointment from './containers/Appointment/Appointment';
-import ListAppintment from './containers/ListAppointments/ListAppointment.js';
 import Logout from './containers/Logout/Logout.js';
 
 function App() {
