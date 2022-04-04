@@ -36,10 +36,10 @@ const LoginUser = () => {
     <div className="generalLogin">
       <h1>Login</h1>
       <form onSubmit={(e) => formSubmit(e)}>
-        <label for="email">E-mail</label>
+        <label htmlFor="email">E-mail</label>
         <input type="email" id="email" name="email" />
 
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" />
 
         <input type="submit" value="LOGIN" className="sendButton"></input>

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import './Register.css';
+import './RegisterUser.css';
 
 
-const Register = () => {
+const RegisterUser = () => {
 
     const navigate = useNavigate();
     const formSubmit = async (e)=>{
@@ -42,16 +42,16 @@ const Register = () => {
         <div className="general">
         <h1>User Register</h1>
         <form onSubmit={(e)=>formSubmit(e)}>
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" />
 
-            <label for="phoneNumber">PhoneNumber</label>
+            <label htmlFor="phoneNumber">PhoneNumber</label>
             <input type="text" id="phonenumber" name="phonenumber" />
 
-            <label for="email">E-mail</label>
+            <label htmlFor="email">E-mail</label>
             <input type="email" id="email" name="email" />
 
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
 
             <input type="submit" value="ACCEPT" className="sendButton"/>
@@ -61,4 +61,4 @@ const Register = () => {
 
 };
 
-export default Register;
+export default RegisterUser;
