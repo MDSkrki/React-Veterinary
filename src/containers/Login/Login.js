@@ -28,7 +28,7 @@ const LoginUser = () => {
 
       store.dispatch({
         type: "USER_LOGGED",
-        payload: data.token
+        payload: {token:data.token, id: data.iduser}
       });
 
       sessionStorage.setItem("iduser", data.iduser);

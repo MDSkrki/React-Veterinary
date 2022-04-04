@@ -8,7 +8,7 @@ const Header = () => {
 
     useEffect(()=>{
         store.subscribe(()=>{
-            console.log("El estado: " + store.getState().login + "token:" + store.getState().token);
+            console.log("El estado: " + store.getState().login + "id:" + store.getState().id);
 
             setLogged(store.getState().login);
         });
