@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const initialState = {
-    
+    login: false
 }
 
 /**
@@ -11,6 +11,11 @@ const initialState = {
  */
 
 const reducer = (state = initialState, action) => {
+
+    if(action.type == "USER_LOGGED"){
+        return {login : true}
+    }
+
 
 }
 

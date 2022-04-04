@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import store from "../../store/store";
 import "./Login.css";
 
 const LoginUser = () => {
@@ -24,6 +25,11 @@ const LoginUser = () => {
       );
      
       const data = await loginUser.json();
+
+      store.dispatch({
+        type: "USER_LOGGED",
+      });
+
       sessionStorage.setItem("iduser", data.iduser);
       sessionStorage.setItem("token", data.token);
       console.log("Very Nice:" + sessionStorage.getItem("iduser"));
