@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import './Register.css';
+import './RegisterUser.css';
 
 
-const Register = () => {
+const RegisterUser = () => {
 
     const navigate = useNavigate();
     const formSubmit = async (e)=>{
@@ -61,4 +61,4 @@ const Register = () => {
 
 };
 
-export default Register;
+export default RegisterUser;

@@ -1,4 +1,4 @@
-const Appointment = () => {
+const CreateAppointment = () => {
     const formSubmit = async (e) => {
         e.preventDefault()
         try {
@@ -53,4 +53,4 @@ const Appointment = () => {
     );
 }
 
-export default Appointment;
+export default CreateAppointment;
