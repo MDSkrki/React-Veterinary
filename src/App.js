@@ -1,11 +1,11 @@
 import './App.css';
-import RegisterUser from './containers/Register/RegisterUser.js';
+import RegisterUser from './containers/RegisterUser/RegisterUser.js';
 import RegisterPet from './containers/RegisterPet/RegisterPet.js';
 import Login from './containers/Login/Login.js';
 import Home from './containers/Home/Home.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Profile from './containers/Profile/Profile';
-import CreateAppointment from './containers/Appointment/CreateAppointment';
+import CreateAppointment from './containers/CreateAppointment/CreateAppointment';
 import Logout from './containers/Logout/Logout.js';
 import Header from './component/Header/Header';
 
