@@ -47,6 +47,7 @@ const Profile = () => {
                                 <Link to='/Appointment'>
                                 <button>Add New Appointment</button>
                                 </Link>
+                                <button>Edit Pet</button>
                             </div>
                         );
                     })}
