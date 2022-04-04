@@ -31,13 +31,13 @@ const Appointment = () => {
             <h1>Appointment for bichito</h1>
             <form onSubmit={(e) => formSubmit(e)}>
         
-                <label for="treatment">Treatment</label>
+                <label htmlFor="treatment">Treatment</label>
                 <input type="text" id="treatment" name="treatment" />
 
-                <label for="date">Date</label>
+                <label htmlFor="date">Date</label>
                 <input type="date" id="date" name="date" />
 
-                <label for="professional">Choose your doctor:</label>
+                <label htmlFor="professional">Choose your doctor:</label>
                 <select id="professional">
                     <option value="Mihai">Mihai</option>
                     <option value="Susana">Susana</option>

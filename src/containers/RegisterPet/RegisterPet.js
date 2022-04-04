@@ -38,16 +38,16 @@ const RegisterPet = () => {
         <div className="generalPet">
             <h1>Pet Register</h1>
             <form onSubmit={(e) => formSubmit(e)}>
-                <label for="PetName">Pet Name</label>
+                <label htmlFor="PetName">Pet Name</label>
                 <input type="text" id="PetName" name="PetName" />
 
-                <label for="age">Age</label>
+                <label htmlFor="age">Age</label>
                 <input type="number" id="age" name="age" />
 
-                <label for="species">Species</label>
+                <label htmlFor="species">Species</label>
                 <input type="text" id="species" name="species" />
 
-                <label for="alergies">Alergies</label>
+                <label htmlFor="alergies">Alergies</label>
                 <input type="text" id="alergies" name="alergies" />
 
                 <input type="submit" value="ACCEPT" className="sendButton"></input>
