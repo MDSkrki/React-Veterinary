@@ -1,5 +1,5 @@
 import './Home.css';
-import Logo from '../../images/Desktop - 1.png';
+import Logo from '../../images/physiopet-logo.png';
 import { Link } from 'react-router-dom';
 
 
