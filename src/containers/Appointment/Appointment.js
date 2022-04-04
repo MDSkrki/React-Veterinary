@@ -3,10 +3,10 @@ const Appointment = () => {
         e.preventDefault()
         try {
             const formData = {
-                petName: e.target[0].value,
-                treatment: e.target[1].value,
-                date: e.target[2].value,
-                professional: e.target[3].value,
+                treatment: e.target[0].value,
+                date: e.target[1].value,
+                professional: e.target[2].value,
+                idPet: e.target[3].value,
             };
 
             const postAppointment = await fetch("https://chen-veterinary.herokuapp.com/appointment", {
@@ -18,7 +18,7 @@ const Appointment = () => {
             });
 
             if (postAppointment) {
-                alert("Very Nice")
+                alert("The new appointment is generated")
             }
         } catch (error) {
             alert("Not Good" + error)
@@ -28,19 +28,14 @@ const Appointment = () => {
 
     return (
         <div className="generalAppointment">
-            <h1>Appointment</h1>
+            <h1>Appointment for bichito</h1>
             <form onSubmit={(e) => formSubmit(e)}>
-                <label for="petName">Pet Name</label>
-                <input type="text" id="petName" name="petName" />
-
+        
                 <label for="treatment">Treatment</label>
                 <input type="text" id="treatment" name="treatment" />
 
                 <label for="date">Date</label>
                 <input type="date" id="date" name="date" />
-
-                <label for="professional">Professional</label>
-                <input type="text" id="professional" name="professional" />
 
                 <label for="professional">Choose your doctor:</label>
                 <select id="professional">

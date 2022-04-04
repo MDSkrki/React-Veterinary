@@ -1,15 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import "./Profile.css";
+import { Link } from 'react-router-dom';
 
-
-/**
- * Pending tasks:
- * 1- Recieve user's name through props
- * 2- Insert user's name in h1
- * 
- */
-
-//en este profile tiene que salir los datos de la mascota con sus citas
 const Profile = () => {
+    
 
     const [pets, setPets] = useState([]);
 
@@ -34,23 +28,29 @@ const Profile = () => {
     return(
         <div>
             <h1>Hello {}!</h1>
-            <button>See Pets</button>
-            <button>See Appointments</button>   
-            <button>Logout</button>  
+            <div className="buttons">
             <button>Add new pet</button>
+            <Link to='/logout'>
+            <button>Logout</button> 
+            </Link> 
+            </div>
             <div>
-                <ol>
+                <ul>
                     {pets.map((pet)=>{
                         return (
-                            <div>
-                                <li>{pet.name}</li>
-                                <li>{pet.age}</li>
-                                <li>{pet.species}</li>
-                                <li>{pet.allergies}</li>
+                            <div className="petCard">
+                                <li>Name: {pet.name}</li>
+                                <li>Age: {pet.age}</li>
+                                <li>Species: {pet.species}</li>
+                                <li>Allergies: {pet.allergies}</li>
+                                <br/>
+                                <Link to='/Appointment'>
+                                <button>Add New Appointment</button>
+                                </Link>
                             </div>
                         );
-                    })};
-                </ol>
+                    })}
+                </ul>
             </div>
         </div>
     );

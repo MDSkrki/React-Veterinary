@@ -6,6 +6,7 @@ import Home from './containers/Home/Home.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Profile from './containers/Profile/Profile';
 import Appointment from './containers/Appointment/Appointment';
+import Logout from './containers/Logout/Logout.js';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path='/register/pet' element={<RegisterPet />} />
           <Route path='/login' element={<Login />} />
           <Route path='/appointment' element={<Appointment />} />
-
+          <Route path='/logout' element={<Logout />} />
         </Routes>
       </BrowserRouter>
     </div>
