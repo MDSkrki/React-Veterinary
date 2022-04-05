@@ -14,12 +14,7 @@ const Logout = () => {
         type: "USER_UNLOGGED"
       });
 
-      setTimeout(
-        function () {
-          navigate("/login");
-        }.bind(this),
-        1000
-      );
+      setTimeout(() => { navigate("/login") }, 1000);
     } catch (error) {
       console.log(error);
     }
