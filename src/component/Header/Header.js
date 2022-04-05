@@ -25,6 +25,7 @@ const Header = () => {
                 <Link to='/register'>
                     <button>Register</button>
                 </Link>
+                
             </nav>
             <a href="../../containers/ListAppointments/ListAppointment.js">Appointment</a>
 

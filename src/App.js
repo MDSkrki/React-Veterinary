@@ -8,6 +8,7 @@ import Profile from './containers/Profile/Profile';
 import CreateAppointment from './containers/CreateAppointment/CreateAppointment';
 import Logout from './containers/Logout/Logout.js';
 import Header from './component/Header/Header';
+import { Appointments } from './containers/Appointments/Appointments';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/appointment/:idPet' element={<CreateAppointment />} />
           <Route path='/logout' element={<Logout />} />
+          <Route path='/listAppointment' element={<Appointments/>}/>
         </Routes>
       </BrowserRouter>
     </div>
