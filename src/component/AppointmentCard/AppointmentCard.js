@@ -1,32 +1,13 @@
-export const AppointmentCard = (appointment) => {
 
-    const [appointment, setappointment] = useState([]);
-
-    const appointmentList = async () => {
-        const appointmentResults = await fetch ("https://chen-veterinary.herokuapp.com/pet?idUser="+sessionStorage.getItem("iduser"), {
-            method:"GET"
-        });
-
-        const dataAppointment = await appointmentResults.json();
-
-        setappointment(dataAppointment);
-    }
-
-    useEffect(()=>{
-        try{
-            appointmentList();
-        } catch (error){
-            console.log(error)
-        }
-    },[]);
+export const AppointmentCard = (itemAppointment) => {
 
 
     return (
         <div className="appointmentCard">
-        <li>date: {appointment.date}</li>
-        <li>treatment: {appointment.treatment}</li>
-        <li>professional: {appointment.professional}</li>
-        <button >Edit appointment</button>
+        <li>date: {itemAppointment.date}</li>
+        <li>treatment: {itemAppointment.treatment}</li>
+        <li>professional: {itemAppointment.professional}</li>
+        <button onClick={()=>navigate("/EditAppointment"+itemAppointment.id)}>Edit appointment</button>
         <button>Delete appointment</button>
     </div>
     )
