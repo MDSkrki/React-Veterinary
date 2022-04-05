@@ -4,7 +4,7 @@ export const PetCard = ({ pet }) => {
     const navigate = useNavigate();
 
     const buttonHandler = () => {
-        navigate('/listAppointment', { state: pet })
+        navigate('/listAppointment', { state: pet }) 
     }
 
     return (

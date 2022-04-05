@@ -13,7 +13,7 @@ const CreateAppointment = () => {
                 treatment: e.target[0].value,
                 date: e.target[1].value,
                 professional: e.target[2].value,
-                idPet: location.state.idPet,
+                idPet: location.state.id
             };
 
             const postAppointment = await fetch("https://chen-veterinary.herokuapp.com/appointment", {
@@ -32,10 +32,13 @@ const CreateAppointment = () => {
         }
 
     };
-
+            useEffect (()=>{
+                console.log (location)  
+            }, []);
+            
     return (
         <div className="generalAppointment">
-            <h1>Appointment for {location.state.name}: {location.state.idPet}</h1>
+            <h1>Appointment for {location.state.name}: {location.state.id}</h1>
             <form onSubmit={(e) => formSubmit(e)}>
         
                 <label htmlFor="treatment">Treatment</label>

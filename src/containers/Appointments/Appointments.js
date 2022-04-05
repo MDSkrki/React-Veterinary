@@ -1,23 +1,26 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AppointmentCard } from "../../component/AppointmentCard/AppointmentCard";
 
 export const Appointments = ({pet}) => {
 
     const navigate = useNavigate();
+    const location = useLocation();
+    
 
     const buttonHandler = () => {
-        navigate('/appointment', { state: pet })
+        navigate('/appointment', { state: location.state });
     }
 
     const [appointments, setAppointments] = useState([]);
 
     const appointmentList = async () => {
-        const appointmentResults = await fetch ("https://chen-veterinary.herokuapp.com/appointment?idPet="+sessionStorage.getItem("idPet"), {
+        const appointmentResults = await fetch ("https://chen-veterinary.herokuapp.com/appointment?idPet="+location.state.id, {
             method:"GET"
         });
 
         const dataAppointments = await appointmentResults.json();
+        console.log(dataAppointments);
 
         setAppointments(dataAppointments);
     }

@@ -21,7 +21,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/register/pet' element={<RegisterPet />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/appointment/:idPet' element={<CreateAppointment />} />
+          <Route path='/appointment' element={<CreateAppointment />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/listAppointment' element={<Appointments/>}/>
         </Routes>
