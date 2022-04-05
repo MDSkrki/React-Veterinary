@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import "./Profile.css";
 import { Link } from 'react-router-dom';
+import { PetCard } from '../../component/PetCard/PetCard';
 
 const Profile = () => {
     
@@ -36,17 +37,7 @@ const Profile = () => {
                 <ul>
                     {pets.map((pet)=>{
                         return (
-                            <div className="petCard">
-                                <li>Name: {pet.name}</li>
-                                <li>Age: {pet.age}</li>
-                                <li>Species: {pet.species}</li>
-                                <li>Allergies: {pet.allergies}</li>
-                                <br/>
-                                <Link to={`/appointment/${pet.idPet}`}>
-                                <button>Add New Appointment</button>
-                                </Link>
-                                <button>Edit Pet</button>
-                            </div>
+                            <PetCard pet={pet} />
                         );
                     })}
                 </ul>

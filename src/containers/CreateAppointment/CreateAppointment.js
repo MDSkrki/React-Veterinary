@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const CreateAppointment = () => {
-    
-    const params = useParams();
+
+    const location = useLocation();
+
 
     const formSubmit = async (e) => {
         e.preventDefault()
@@ -12,7 +13,7 @@ const CreateAppointment = () => {
                 treatment: e.target[0].value,
                 date: e.target[1].value,
                 professional: e.target[2].value,
-                idPet: params.idPet
+                idPet: location.state.idPet,
             };
 
             const postAppointment = await fetch("https://chen-veterinary.herokuapp.com/appointment", {
@@ -34,7 +35,7 @@ const CreateAppointment = () => {
 
     return (
         <div className="generalAppointment">
-            <h1>Appointment for bichito: {params.idPet}</h1>
+            <h1>Appointment for {location.state.name}: {location.state.idPet}</h1>
             <form onSubmit={(e) => formSubmit(e)}>
         
                 <label htmlFor="treatment">Treatment</label>
