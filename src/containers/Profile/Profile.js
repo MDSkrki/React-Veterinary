@@ -42,7 +42,7 @@ const Profile = () => {
                                 <li>Species: {pet.species}</li>
                                 <li>Allergies: {pet.allergies}</li>
                                 <br/>
-                                <Link to='/Appointment'>
+                                <Link to={`/appointment/${pet.idPet}`}>
                                 <button>Add New Appointment</button>
                                 </Link>
                                 <button>Edit Pet</button>
