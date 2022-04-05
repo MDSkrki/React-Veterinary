@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 
 export const AppointmentCard = (itemAppointment) => {
-
+    
+    const navigate = useNavigate();
 
     return (
         <div className="appointmentCard">
