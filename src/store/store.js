@@ -3,7 +3,7 @@ import { createStore } from "redux";
 const initialState = {
     login: false,
     token: null,
-    id: 0
+    id: 0,
 };
 
 /**
