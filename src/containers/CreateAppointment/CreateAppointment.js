@@ -1,4 +1,7 @@
 const CreateAppointment = () => {
+
+    const location = useLocation();
+
     const formSubmit = async (e) => {
         e.preventDefault()
         try {
@@ -6,7 +9,7 @@ const CreateAppointment = () => {
                 treatment: e.target[0].value,
                 date: e.target[1].value,
                 professional: e.target[2].value,
-                idPet: e.target[3].value,
+                idPet: location.state.idPet,
             };
 
             const postAppointment = await fetch("https://chen-veterinary.herokuapp.com/appointment", {
