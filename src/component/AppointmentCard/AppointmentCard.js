@@ -10,13 +10,19 @@ export const AppointmentCard = ({appointment}) => {
         console.log(appointment);
     }, []);
 
+
+    const buttonHandler = ()=>{
+        navigate("/editAppointment", {state: appointment})
+    };
+
+
     return (
         <div className="appointmentCard">
         <li>date: {appointment.date}</li>
         <li>treatment: {appointment.treatment}</li>
         <li>professional: {appointment.professional}</li>
-        <button onClick={()=>navigate("/EditAppointment"+appointment.id)}>Edit appointment</button>
-        <button>Delete appointment</button>
+        <button onClick={buttonHandler}>Edit appointment</button>
+        <button>Cancel appointment</button>
     </div>
     )
 };

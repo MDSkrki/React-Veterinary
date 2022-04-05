@@ -1,35 +1,54 @@
-import { useParams } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom";
 
 const EditAppointment = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const params = useParams();
-    const navigate = useNavigate();
+  const formSubmit = async (e) => {
+    e.preventDefault()
+    try {
+        const formData = {
+            treatment: e.target[0].value,
+            date: e.target[1].value,
+            professional: e.target[2].value,
+            idPet: location.state.idPet
+        };
 
-    const [appointment, setappointment] = useState([]);
-
-    const appointmentList = async () => {        //traer citas por id +params.id
-        const appointmentResults = await fetch ("https://chen-veterinary.herokuapp.com/pet?idUser="+sessionStorage.getItem("iduser"), {
-            method:"GET"
+        const response = await fetch("https://chen-veterinary.herokuapp.com/appointment/" + location.state.id, {
+            method: "PATCH",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json",
+            },
         });
 
-        const dataAppointment = await appointmentResults.json();
+        const patchAppointment = await response.json();
 
-        setappointment(dataAppointment);
+        if (patchAppointment) {
+            alert("The appointment has been modified")
+            navigate('/listAppointment', {state: {...formData, id:location.state.id}});
+        }
+    } catch (error) {
+        alert("Not Good" + error)
     }
 
-    useEffect(()=>{
-        try{
-            appointmentList();
-        } catch (error){
-            console.log(error)
-        }
-    },[]);
+  return (
+    <div>
+      <form onSubmit={(e) => formSubmit(e)}>
+       
+        <label htmlFor="treatment">treatment: </label>
+        <input defaultValue={location.state.treatment} id="treatment" />
 
+        <label htmlFor="date">date: </label>
+        <input defaultValue={location.state.date} id="date" />
 
-    return(
-        <div>
-            // input ** defaultvalue (datos de la cita)
-        </div>
+        <label htmlFor="professional">professional: </label>
+        <input defaultValue={location.state.professional} id="professional" />
 
-    )
+        <input type="submit" value="Edit Appointment" />
+      </form>
+    </div>
+  );
+};
 }
+export default EditAppointment;

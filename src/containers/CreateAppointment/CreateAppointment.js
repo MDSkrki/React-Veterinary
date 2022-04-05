@@ -34,10 +34,7 @@ const CreateAppointment = () => {
         }
 
     };
-            useEffect (()=>{
-                console.log (location)  
-            }, []);
-            
+         
     return (
         <div className="generalAppointment">
             <h1>Appointment for {location.state.name}</h1>
