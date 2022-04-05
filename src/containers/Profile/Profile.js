@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Profile.css";
-
 import { PetCard } from "../../component/PetCard/PetCard";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+
+    const navigate = useNavigate();
   const [pets, setPets] = useState([]);
 
   const petList = async () => {
@@ -23,16 +25,21 @@ const Profile = () => {
   useEffect(() => {
     try {
       petList();
+      console.log(pets);
     } catch (error) {
       console.log(error);
     }
   }, []);
 
+  const buttonHandler = ()=>{
+      navigate('/register/pet', {state:{idUser:sessionStorage.getItem("iduser")}})
+  };
+
   return (
     <div>
       <h1>Hello {}!</h1>
       <div className="buttons">
-        <button>Add new pet</button>
+        <button onClick={buttonHandler}>Add new pet</button>
       </div>
       <div>
         <ul>

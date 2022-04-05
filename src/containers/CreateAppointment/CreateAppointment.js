@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CreateAppointment = () => {
 
     const location = useLocation();
+    const navigate = useNavigate();
 
 
     const formSubmit = async (e) => {
@@ -26,6 +27,7 @@ const CreateAppointment = () => {
 
             if (postAppointment) {
                 alert("The new appointment is generated")
+                navigate('/listAppointment', {state: location.state});
             }
         } catch (error) {
             alert("Not Good" + error)
@@ -38,7 +40,7 @@ const CreateAppointment = () => {
             
     return (
         <div className="generalAppointment">
-            <h1>Appointment for {location.state.name}: {location.state.id}</h1>
+            <h1>Appointment for {location.state.name}</h1>
             <form onSubmit={(e) => formSubmit(e)}>
         
                 <label htmlFor="treatment">Treatment</label>

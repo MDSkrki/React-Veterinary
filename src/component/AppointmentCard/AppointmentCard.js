@@ -2,20 +2,20 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-export const AppointmentCard = ({itemAppointment}) => {
+export const AppointmentCard = ({appointment}) => {
 
     const navigate = useNavigate();
 
     useEffect (()=>{
-        console.log("" + itemAppointment)
+        console.log(appointment);
     }, []);
 
     return (
         <div className="appointmentCard">
-        <li>date: {itemAppointment.date}</li>
-        <li>treatment: {itemAppointment.treatment}</li>
-        <li>professional: {itemAppointment.professional}</li>
-        <button onClick={()=>navigate("/EditAppointment"+itemAppointment.id)}>Edit appointment</button>
+        <li>date: {appointment.date}</li>
+        <li>treatment: {appointment.treatment}</li>
+        <li>professional: {appointment.professional}</li>
+        <button onClick={()=>navigate("/EditAppointment"+appointment.id)}>Edit appointment</button>
         <button>Delete appointment</button>
     </div>
     )

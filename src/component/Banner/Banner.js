@@ -16,7 +16,7 @@ const Banner = ({bannerState}) => {
               dispatch({
                 type: "CLOSE_BANNER",
               })
-              navigate('/profile')
+              navigate('/login')
             }}
             src={CloseIcon}
           ></img>
