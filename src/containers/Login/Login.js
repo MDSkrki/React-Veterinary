@@ -25,6 +25,7 @@ const LoginUser = () => {
       );
      
       const data = await loginUser.json();
+      console.log(data)
 
       store.dispatch({
         type: "USER_LOGGED",
