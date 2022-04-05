@@ -3,7 +3,9 @@ import { createStore } from "redux";
 const initialState = {
     login: false,
     token: null,
-    id: 0
+    id: 0,
+    petRegister: false,
+    banner: false
 };
 
 /**
@@ -31,6 +33,21 @@ const reducer = (state = initialState, action) => {
         };
     }
 
+    if(action.type == "PET_REGISTER"){
+        return{
+            ... state,
+            petRegister: true,
+            banner: true
+        };
+    }
+
+    if(action.type == "CLOSE_BANNER"){
+        return{
+            ... state,
+            banner: false
+        };
+    }
+    return state;
 };
 
 export default createStore(reducer);
