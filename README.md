@@ -1,11 +1,10 @@
-//Logo de la app
-
+![logo](./src/images/physiopet-logo.png)
 
 # Bienvenidos a PhysioPet!!!!
 
 ## Introducción
 ---
-
+Este es un proyecto de GeeksHub, la elaboración del Front de una clinica veterinaria utilizando el framework de React con Redux.
 
 ## Tech Stack
 ---
