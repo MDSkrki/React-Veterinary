@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import {createAppointment} from "../../services/appointmentService";
 
 const CreateAppointment = () => {
   const location = useLocation();
@@ -14,18 +15,9 @@ const CreateAppointment = () => {
         idPet: location.state.id,
       };
 
-      const postAppointment = await fetch(
-        "https://chen-veterinary.herokuapp.com/appointment",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const newAppointment = await createAppointment(formData);   //appointmentService
 
-      if (postAppointment) {
+      if (newAppointment) {
         alert("The new appointment is generated");
         navigate("/listAppointment", { state: location.state });
       }
