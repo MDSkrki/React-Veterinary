@@ -1,12 +1,14 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { userLogged } from "../../store/actionTypes";
-import store from "../../store/store";
+import { actionCreator } from "../../store/actionTypes";
 import { USER_LOGGED } from "../../store/types";
 import "./Login.css";
 
 const LoginUser = () => {
-  console.log("hola");
+  
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -29,7 +31,7 @@ const LoginUser = () => {
       const data = await loginUser.json();
       console.log(data)
 
-      store.dispatch(userLogged(USER_LOGGED, {token:data.token, id: data.iduser}));    //llevarlo a actionTypes y types, store.
+      dispatch(actionCreator(USER_LOGGED, {token:data.token, id: data.iduser}));    //llevarlo a actionTypes y types, store.
 
 
       sessionStorage.setItem("iduser", data.iduser);

@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import Banner from "../../component/Banner/Banner";
+import createPet from "../../services/petService";
+import { actionCreator } from "../../store/actionTypes";
+import { PET_REGISTER } from "../../store/types";
 import "./RegisterPet.css";
 
 const RegisterPet = () => {
@@ -21,18 +24,11 @@ const RegisterPet = () => {
         idUser: location.state.idUser,
       };
 
-      const postPet = await fetch("https://chen-veterinary.herokuapp.com/pet", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const newPet = await createPet(formData); //invoca la funcion de post con los datos de formData
+      console.log(newPet);
 
-      if (postPet) {
-        dispatch({
-          type: "PET_REGISTER",
-        });
+      if (newPet) {
+        dispatch(actionCreator(PET_REGISTER)); //crear un accion del dispatch (actionTypes)
       }
     } catch (error) {
       alert("Not Good" + error);

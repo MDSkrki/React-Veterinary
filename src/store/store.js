@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { PET_REGISTER, USER_LOGGED } from "./types";
 
 const initialState = {
     login: false,
@@ -33,7 +34,7 @@ const reducer = (state = initialState, action) => {
         };
     }
 
-    if(action.type == "PET_REGISTER"){
+    if(action.type == PET_REGISTER){
         return{
             ... state,
             petRegister: true,

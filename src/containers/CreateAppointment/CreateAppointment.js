@@ -1,64 +1,62 @@
-import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const CreateAppointment = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const location = useLocation();
-    const navigate = useNavigate();
+  const formSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = {
+        treatment: e.target[0].value,
+        date: e.target[1].value,
+        professional: e.target[2].value,
+        idPet: location.state.id,
+      };
 
-
-    const formSubmit = async (e) => {
-        e.preventDefault()
-        try {
-            const formData = {
-                treatment: e.target[0].value,
-                date: e.target[1].value,
-                professional: e.target[2].value,
-                idPet: location.state.id
-            };
-
-            const postAppointment = await fetch("https://chen-veterinary.herokuapp.com/appointment", {
-                method: "POST",
-                body: JSON.stringify(formData),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            if (postAppointment) {
-                alert("The new appointment is generated")
-                navigate('/listAppointment', {state: location.state});
-            }
-        } catch (error) {
-            alert("Not Good" + error)
+      const postAppointment = await fetch(
+        "https://chen-veterinary.herokuapp.com/appointment",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
+      );
 
-    };
-         
-    return (
-        <div className="generalAppointment">
-            <h1>Appointment for {location.state.name}</h1>
-            <form onSubmit={(e) => formSubmit(e)}>
-        
-                <label htmlFor="treatment">Treatment</label>
-                <input type="text" id="treatment" name="treatment" />
+      if (postAppointment) {
+        alert("The new appointment is generated");
+        navigate("/listAppointment", { state: location.state });
+      }
+    } catch (error) {
+      alert("Not Good" + error);
+    }
+  };
 
-                <label htmlFor="date">Date</label>
-                <input type="date" id="date" name="date" />
+  return (
+    <div className="generalAppointment">
+      <h1>Appointment for {location.state.name}</h1>
+      <form onSubmit={(e) => formSubmit(e)}>
+        <label htmlFor="treatment">Treatment</label>
+        <input type="text" id="treatment" name="treatment" />
 
-                <label htmlFor="professional">Choose your doctor:</label>
-                <select id="professional">
-                    <option value="Mihai">Mihai</option>
-                    <option value="Susana">Susana</option>
-                    <option value="Alex">Alex</option>
-                    <option value="David">David</option>
-                    <option value="Rogelio">Rogelio</option>
-                </select>
+        <label htmlFor="date">Date</label>
+        <input type="date" id="date" name="date" />
 
-                <input type="submit" value="ACCEPT" className="sendButton"></input>
-            </form>
-        </div>
-    );
-}
+        <label htmlFor="professional">Choose your doctor:</label>
+        <select id="professional">
+          <option value="Mihai">Mihai</option>
+          <option value="Susana">Susana</option>
+          <option value="Alex">Alex</option>
+          <option value="David">David</option>
+          <option value="Rogelio">Rogelio</option>
+        </select>
+
+        <input type="submit" value="ACCEPT" className="sendButton"></input>
+      </form>
+    </div>
+  );
+};
 
 export default CreateAppointment;

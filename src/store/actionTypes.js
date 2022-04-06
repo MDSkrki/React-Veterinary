@@ -1,9 +1,3 @@
-import {USER_LOGGED} from './types.js'
-
-const userLogged = (payload)=>{    //el payload se lo pasamos por el container donde tenemos la funcion
-    return {type: USER_LOGGED, payload:payload};
-};
-
 
 const actionCreator = (type, payload)=>{
     
@@ -14,4 +8,4 @@ const actionCreator = (type, payload)=>{
 };
 
 
-export {userLogged, actionCreator};
+export { actionCreator };
