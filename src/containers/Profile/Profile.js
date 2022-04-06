@@ -5,13 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
 
-    const navigate = useNavigate();
+  // Hooks
+  const navigate = useNavigate();
   const [pets, setPets] = useState([]);
 
+  // Handlers
   const petList = async () => {
     const petResults = await fetch(
       "https://chen-veterinary.herokuapp.com/pet?idUser=" +
-        sessionStorage.getItem("iduser"),
+      sessionStorage.getItem("iduser"),
       {
         method: "GET",
       }
@@ -25,19 +27,18 @@ const Profile = () => {
   useEffect(() => {
     try {
       petList();
-      console.log(pets);
     } catch (error) {
       console.log(error);
     }
   }, []);
 
-  const buttonHandler = ()=>{
-      navigate('/register/pet', {state:{idUser:sessionStorage.getItem("iduser")}})
+  const buttonHandler = () => {
+    navigate('/register/pet', { state: { idUser: sessionStorage.getItem("iduser") } });
   };
 
   return (
     <div>
-      <h1>Hello {}!</h1>
+      <h1>Hello { }!</h1>
       <div className="buttons">
         <button onClick={buttonHandler}>Add new pet</button>
       </div>

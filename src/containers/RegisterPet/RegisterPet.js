@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Banner from "../../component/Banner/Banner";
 import createPet from "../../services/petService";
 import { actionCreator } from "../../store/actionTypes";
@@ -7,12 +7,14 @@ import { PET_REGISTER } from "../../store/types";
 import "./RegisterPet.css";
 
 const RegisterPet = () => {
+
+  // Hooks
   const location = useLocation();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const bannerState = useSelector((state) => state.banner);
 
+  // Handlers
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -24,14 +26,14 @@ const RegisterPet = () => {
         idUser: location.state.idUser,
       };
 
-      const newPet = await createPet(formData); //invoca la funcion de post con los datos de formData
-      console.log(newPet);
+      const newPet = await createPet(formData);
 
       if (newPet) {
-        dispatch(actionCreator(PET_REGISTER)); //crear un accion del dispatch (actionTypes)
+        dispatch(actionCreator(PET_REGISTER));
       }
     } catch (error) {
-      alert("Not Good" + error);
+      alert("Pet Register failed" + error);
+      console.log(error);
     }
   };
 

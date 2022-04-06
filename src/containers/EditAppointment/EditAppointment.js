@@ -2,9 +2,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { modifyAppointment } from "../../services/appointmentService";
 
 const EditAppointment = () => {
+
+  // Hooks
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Handlers
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,15 +30,15 @@ const EditAppointment = () => {
         });
       }
     } catch (error) {
-      alert("Not Good" + error);
+      alert("Appointment Edit failed" + error);
+      console.log(error);
     }
   };
 
   const cancelHandler = () => {
     modifyAppointment({ state: "cancelled" }, location.state.id);
     alert("The appointment has been cancelled");
-        navigate("/listAppointment");
-    
+    navigate("/listAppointment");
   };
   return (
     <div>

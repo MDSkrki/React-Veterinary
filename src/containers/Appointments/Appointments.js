@@ -2,21 +2,16 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AppointmentCard } from "../../component/AppointmentCard/AppointmentCard";
 
-export const Appointments = ({pet}) => {
+export const Appointments = () => {
 
+    // Hooks
     const navigate = useNavigate();
     const location = useLocation();
-    
-
-    const buttonHandler = () => {
-        navigate('/appointment', { state: location.state });
-    }
-
     const [appointments, setAppointments] = useState([]);
 
     const appointmentList = async () => {
-        const appointmentResults = await fetch ("https://chen-veterinary.herokuapp.com/appointment?idPet="+location.state.id, {
-            method:"GET"
+        const appointmentResults = await fetch("https://chen-veterinary.herokuapp.com/appointment?idPet=" + location.state.id, {
+            method: "GET"
         });
 
         const dataAppointments = await appointmentResults.json();
@@ -25,15 +20,20 @@ export const Appointments = ({pet}) => {
         setAppointments(dataAppointments);
     }
 
-    useEffect(()=>{
-        try{
+    useEffect(() => {
+        try {
             appointmentList();
-        } catch (error){
+        } catch (error) {
             console.log(error)
         }
-    },[]);
+    }, []);
 
-    return(
+    // Handlers
+    const buttonHandler = () => {
+        navigate('/appointment', { state: location.state });
+    }
+
+    return (
         <div>
             <h1>These are your appointments:</h1>
             <button onClick={buttonHandler}>Add New Appointment</button>
@@ -41,7 +41,7 @@ export const Appointments = ({pet}) => {
                 <ul>
                     {appointments.map((appointment) => {
                         return (
-                          <AppointmentCard appointment={appointment}></AppointmentCard>
+                            <AppointmentCard appointment={appointment}></AppointmentCard>
                         )
                     })}
                 </ul>

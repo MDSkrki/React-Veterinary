@@ -5,10 +5,11 @@ import { USER_LOGGED } from "../../store/types";
 import "./Login.css";
 
 const LoginUser = () => {
-  
+  // Hooks 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // Form Handler
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,19 +28,18 @@ const LoginUser = () => {
           },
         }
       );
-     
+
       const data = await loginUser.json();
-      console.log(data)
 
-      dispatch(actionCreator(USER_LOGGED, {token:data.token, id: data.iduser}));    //llevarlo a actionTypes y types, store.
-
+      dispatch(actionCreator(USER_LOGGED, { token: data.token, id: data.iduser }));
 
       sessionStorage.setItem("iduser", data.iduser);
       sessionStorage.setItem("token", data.token);
-      console.log("Very Nice:" + sessionStorage.getItem("iduser"));
+
       navigate("/profile");
     } catch (error) {
-      alert("Not Good" + error);
+      alert("Login failed" + error);
+      console.log(error);
     };
   };
   return (

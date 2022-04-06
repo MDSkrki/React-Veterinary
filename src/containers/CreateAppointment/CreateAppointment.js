@@ -1,10 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import {createAppointment} from "../../services/appointmentService";
+import { createAppointment } from "../../services/appointmentService";
 
 const CreateAppointment = () => {
+
+  // Hooks
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Handlers
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -22,7 +25,8 @@ const CreateAppointment = () => {
         navigate("/listAppointment", { state: location.state });
       }
     } catch (error) {
-      alert("Not Good" + error);
+      alert("Appointment creation failed" + error);
+      console.log(error);
     }
   };
 

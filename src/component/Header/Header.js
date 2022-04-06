@@ -5,6 +5,8 @@ import './Header.css';
 
 
 const Header = () => {
+
+    // Hooks
     const [logged, setLogged] = useState(false);
 
     useEffect(() => {

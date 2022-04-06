@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export const PetCard = ({ pet }) => {
     const navigate = useNavigate();
 
     const buttonHandler = () => {
-        navigate('/listAppointment', { state: pet }) 
+        navigate('/listAppointment', { state: pet });
     }
 
     return (
@@ -14,9 +14,7 @@ export const PetCard = ({ pet }) => {
             <li>Species: {pet.species}</li>
             <li>Allergies: {pet.allergies}</li>
             <br />
-
             <button onClick={buttonHandler}>List Appointment</button>
-            
         </div>
     )
 }
