@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import createAppointment from "../../services/appointmentService";
+import {createAppointment} from "../../services/appointmentService";
 
 const CreateAppointment = () => {
   const location = useLocation();

@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { modifyAppointment } from "../../services/appointmentService";
 
 const EditAppointment = () => {
   const location = useLocation();
@@ -14,19 +15,10 @@ const EditAppointment = () => {
         idPet: location.state.idPet,
       };
 
-      const response = await fetch(
-        "https://chen-veterinary.herokuapp.com/appointment/" +
-          location.state.id,
-        {
-          method: "PATCH",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      const patchAppointment = await response.json();
+      const patchAppointment = await modifyAppointment(
+        formData,
+        location.state.id
+      ); //appointmentService
 
       if (patchAppointment) {
         alert("The appointment has been modified");
@@ -38,6 +30,13 @@ const EditAppointment = () => {
       alert("Not Good" + error);
     }
   };
+
+  const cancelHandler = () => {
+    modifyAppointment({ state: "cancelled" }, location.state.id);
+    alert("The appointment has been cancelled");
+        navigate("/listAppointment");
+    
+  };
   return (
     <div>
       <form onSubmit={(e) => formSubmit(e)}>
@@ -45,7 +44,12 @@ const EditAppointment = () => {
         <input defaultValue={location.state.treatment} id="treatment" />
 
         <label htmlFor="date">Date</label>
-        <input type="date"  defaultValue={location.state.date} id="date" name="date" />
+        <input
+          type="date"
+          defaultValue={location.state.date}
+          id="date"
+          name="date"
+        />
 
         <label htmlFor="professional">Choose your doctor:</label>
         <select id="professional" defaultValue={location.state.professional}>
@@ -55,9 +59,10 @@ const EditAppointment = () => {
           <option value="David">David</option>
           <option value="Rogelio">Rogelio</option>
         </select>
-
+        <br />
         <input type="submit" value="Edit Appointment" />
       </form>
+      <button onClick={cancelHandler}>Cancel appointment</button>
     </div>
   );
 };

@@ -21,8 +21,9 @@ export const AppointmentCard = ({appointment}) => {
         <li>date: {appointment.date}</li>
         <li>treatment: {appointment.treatment}</li>
         <li>professional: {appointment.professional}</li>
+        <li>state:{appointment.state}</li>
         <button onClick={buttonHandler}>Edit appointment</button>
-        <button>Cancel appointment</button>
+       
     </div>
     )
 };
