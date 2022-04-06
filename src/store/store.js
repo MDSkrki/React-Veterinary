@@ -16,7 +16,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
-    if(action.type == "USER_LOGGED"){
+    if(action.type == USER_LOGGED){
         
         return {
             login : true,

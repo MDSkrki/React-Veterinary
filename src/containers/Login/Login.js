@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { userLogged } from "../../store/actionTypes";
 import store from "../../store/store";
+import { USER_LOGGED } from "../../store/types";
 import "./Login.css";
 
 const LoginUser = () => {
@@ -27,10 +29,8 @@ const LoginUser = () => {
       const data = await loginUser.json();
       console.log(data)
 
-      store.dispatch({
-        type: "USER_LOGGED",
-        payload: {token:data.token, id: data.iduser}
-      });
+      store.dispatch(userLogged(USER_LOGGED, {token:data.token, id: data.iduser}));    //llevarlo a actionTypes y types, store.
+
 
       sessionStorage.setItem("iduser", data.iduser);
       sessionStorage.setItem("token", data.token);
