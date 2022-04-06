@@ -1,7 +1,6 @@
 import "./Logout.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import store from "../../store/store";
 import { useDispatch } from "react-redux";
 
 const Logout = () => {
