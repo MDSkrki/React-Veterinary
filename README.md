@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+//Logo de la app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Bienvenidos a PhysioPet!!!!
 
-In the project directory, you can run:
+## Introducción
+---
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
+---
+Se han utilizado las siguientes tecnologías:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="left>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+</p>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Manual de uso
+----
+Gracias por vuestra confianza depositada en nosotros a lo largo de la historia de la clínica, al fin, pudimos sacar una aplicación para facilitaros a la hora de pedir cita para sus queridas mascotas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Aquí os dejo explicado brevemente la estructura de la aplicación y como utilizarla:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Paso 1. Descargar la app vía web, próximamente saldrá la versión para móvil. De momento es un MVP(mínimo producto viable, las mejoras irás viniendo).
 
-### `npm run eject`
+Paso 2. Llegarás a nuestra página de INICIO con nuestro logo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Paso 3. Lo primero tienes dar al botón de Register para que se registren tus datos como usuario de la aplicación.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Te pedirán los siguientes datos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```html
+Nombre:
+Número de teléfono:
+Correo electrónico:
+Contraseña:
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Después de darle a aceptar te saldrá directamente la página de registro de tu mascota:
 
-## Learn More
+`````html
+Nombre de la mascota:
+Edad:
+Tipo de animal:
+Alergias:
+`````
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- El sistema te saltará un mensaje de que se a registrado los datos correctamente
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Paso 5. Una vez que esten todos los datos guardados tendrás que logearte con la cuenta con la que te has registrado anteriormente.
 
-### Code Splitting
+Paso 6. Te saldrán la lista completa de tus mascotas, en esta página podrás:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Añadir una nueva mascota.
+- Tarjetas de tus mascotas con los detalles.
+- Botón para dirigirte a las citas de la mascota en la ficha.
 
-### Analyzing the Bundle Size
+### Si quieres añadir una nueva mascota:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Haz click en `Add new pet` te llevará a la página de registro de mascotas para crear tu nueva mascota.
 
-### Making a Progressive Web App
+### Si quieres pedir una cita para tu mascota:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Haz click en `List Appointment` donde te saldrán la lista de citas de la mascota clickada, arriba verás el botón de `Add New Appointment` donde podrás pedir una cita para esa mascota, rellenando los campos:
 
-### Advanced Configuration
+```html
+Tratamiento: ( a realizar ) 
+Fecha de la visita:
+Elección del profesional:
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Una vez rellenado los campos, la nueva cita te saldrá reflejada en tu lista de citas de esa mascota.
 
-### Deployment
+Si por casualidades de la vida, no pudieses acudir a la cita en la fecha prevista, tú mismo puedes entrar en tu cita y modificarlas con el botón `Edit appointment` rellenando los campos iguales anteriormente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Si no pudieses acudir a la cita en la misma edición de la cita puedes darle al botón de `Cancel Appointment` para cancelar la cita.
 
-### `npm run build` fails to minify
+Para terminar solo tienes que darle al botón de `Logout` para finalizar la sesión.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Autores
+-----
+
+* [Susana chen](https://github.com/susanachen03)
+* [Mihai Somkereki](https://github.com/susanachen03)
+
+## Como ayudar
+----
+* Si deseas colaborar con éste proyecto u otro no dudes en contactar con nosotras o solicitar una pull request.
+* Nuestros correos electrónicos son: [somkereki@hotmail.com](mailto:somkereki@hotmail.com) , [grupochen@hotmail.com](mailto:grupochen@hotmail.com)
+* Cualquier aporte se puede compensar en una quedada de cervezas o café para los que no beben cerveza.
+  
+## Agradecimientos
+----
+* Al equipo de desarrollo (Mihai y Susana) por su contancia, esfuerzo, comunicación y buen trabajo en equipo.
+*  A nuestro profesor titular Gonzalo, que se esfuerza día a día para que seamos mejores programadores.
+*  A nuestros compañeros que siempre estan dispuestos a ayudar como un equipo de remo.
+*  Repositorio público con código libre con el fin de seguir promoviendo compartir conocimientos y ayudar a otros programadores.
+*  Agradecimiento a Jose Villanueva por la ayuda, paciencia y dedicación a la resolución de problemas encontrados.
