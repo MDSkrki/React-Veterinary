@@ -1,9 +1,12 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "../../images/icons8-close-48.png";
+import { actionCreator } from "../../store/actionTypes";
+import { CLOSE_BANNER } from "../../store/types";
 
 const Banner = ({bannerState}) => {
- // const bannerState = useSelector((state) => state.banner);
+
+  // Hooks
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -13,10 +16,8 @@ const Banner = ({bannerState}) => {
         <div>
           <img
             onClick={() =>{ 
-              dispatch({
-                type: "CLOSE_BANNER",
-              })
-              navigate('/login')
+              dispatch(actionCreator(CLOSE_BANNER));
+              navigate('/login');
             }}
             src={CloseIcon}
           ></img>

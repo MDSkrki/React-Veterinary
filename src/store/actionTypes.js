@@ -1,11 +1,5 @@
-
-const actionCreator = (type, payload)=>{
-    
-    if (!payload){
-        return {type:type}
-    }
-    return {type:type, payload:payload};
+const actionCreator = (type, payload) => {
+    return !payload ? {type} : {type, payload}
 };
-
 
 export { actionCreator };

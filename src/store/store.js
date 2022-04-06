@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { PET_REGISTER, USER_LOGGED } from "./types";
+import { CLOSE_BANNER, PET_REGISTER, USER_LOGGED, USER_UNLOGGED } from "./types";
 
 const initialState = {
     login: false,
@@ -17,34 +17,35 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
-    if(action.type == USER_LOGGED){
-        
+    if (action.type == USER_LOGGED) {
         return {
-            login : true,
-            token : action.payload.token,
+            ...state,
+            login: true,
+            token: action.payload.token,
             id: action.payload.id
         };
     }
 
-    if(action.type == "USER_UNLOGGED"){
-        return{
+    if (action.type == USER_UNLOGGED) {
+        return {
+            ...state,
             login: false,
             token: null,
             id: 0
         };
     }
 
-    if(action.type == PET_REGISTER){
-        return{
-            ... state,
+    if (action.type == PET_REGISTER) {
+        return {
+            ...state,
             petRegister: true,
             banner: true
         };
     }
 
-    if(action.type == "CLOSE_BANNER"){
-        return{
-            ... state,
+    if (action.type == CLOSE_BANNER) {
+        return {
+            ...state,
             banner: false
         };
     }

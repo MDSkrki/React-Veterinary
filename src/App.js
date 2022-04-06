@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header />
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/register' element={<RegisterUser />} />
@@ -24,8 +24,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/appointment' element={<CreateAppointment />} />
           <Route path='/logout' element={<Logout />} />
-          <Route path='/listAppointment' element={<Appointments/>}/>
-          <Route path='/editAppointment' element={<EditAppointment/>}/>
+          <Route path='/listAppointment' element={<Appointments />} />
+          <Route path='/editAppointment' element={<EditAppointment />} />
         </Routes>
       </BrowserRouter>
     </div>
