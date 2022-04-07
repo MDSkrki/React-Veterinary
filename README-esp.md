@@ -97,7 +97,8 @@ Para terminar solo tienes que darle al botón de `Logout` para finalizar la sesi
 
 ## Autores
 -----
-
+ Link a nuestros repositorios:
+ 
 * [Susana chen](https://github.com/susanachen03)
 * [Mihai Somkereki](https://github.com/susanachen03)
 
