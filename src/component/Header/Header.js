@@ -20,6 +20,7 @@ const Header = () => {
     return (
         <div>
             <nav>
+                <br/>
                 <Link to="/"><button>Home</button></Link>
                 <Link to="/profile"><button>Profile</button></Link>
                 {!logged && <Link to='/login'><button>Login</button></Link>}
@@ -27,7 +28,6 @@ const Header = () => {
                 <Link to='/register'>
                     <button>Register</button>
                 </Link>
-                
             </nav>
 
         </div>

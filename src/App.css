@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
 .App {
   text-align: center;
+  font-family: ‘Indie Flower’, cursive;
 }
 
+
+button, input {
+    
+  padding: 10px; 
+  background-color: rgb(144, 188, 154); 
+  color: #ffffff; 
+  text-decoration: none; 
+  text-transform: uppercase; 
+  font-family: ‘Indie Flower’, cursive;
+  border-radius: 50px; 
+}
 
 .App{
   background-color: rgb(255,212,190);
